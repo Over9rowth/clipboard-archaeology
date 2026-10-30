@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e1b4b"/>
+    </linearGradient>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+    <linearGradient id="clipGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="100" fill="url(#bgGrad)"/>
+  <rect x="16" y="16" width="480" height="480" rx="84" fill="none" stroke="#334155" stroke-width="6"/>
+
+  <!-- Clipboard Board -->
+  <rect x="116" y="110" width="280" height="340" rx="24" fill="#1e293b" stroke="#475569" stroke-width="8"/>
+  <!-- Clipboard Metal Clip -->
+  <rect x="196" y="70" width="120" height="60" rx="14" fill="url(#clipGrad)" stroke="#f8fafc" stroke-width="6"/>
+  <circle cx="256" cy="95" r="10" fill="#0f172a"/>
+
+  <!-- Audit Radar / Shield Symbol in Center -->
+  <path d="M 256 180 L 336 215 C 336 300 256 360 256 360 C 256 360 176 300 176 215 Z" 
+        fill="url(#shieldGrad)" opacity="0.9" stroke="#38bdf8" stroke-width="6"/>
+  <circle cx="256" cy="255" r="28" fill="#0f172a"/>
+  <!-- Keyhole / Magnifier inside shield -->
+  <circle cx="256" cy="248" r="12" fill="#38bdf8"/>
+  <polygon points="252,254 260,254 263,272 249,272" fill="#38bdf8"/>
+
+  <!-- Code / Data lines -->
+  <line x1="160" y1="390" x2="270" y2="390" stroke="#64748b" stroke-width="8" stroke-linecap="round"/>
+  <line x1="300" y1="390" x2="352" y2="390" stroke="#10b981" stroke-width="8" stroke-linecap="round"/>
+  <line x1="160" y1="416" x2="230" y2="416" stroke="#64748b" stroke-width="8" stroke-linecap="round"/>
+  <line x1="250" y1="416" x2="352" y2="416" stroke="#f43f5e" stroke-width="8" stroke-linecap="round"/>
+</svg>

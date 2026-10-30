@@ -1,0 +1,97 @@
+{
+  "name": "clipboard-archaeology",
+  "version": "1.0.0",
+  "description": "剪贴板考古台 — 整理剪贴板历史，自动找出里面夹带的手机号、身份证、银行卡并一键打码脱敏",
+  "main": "dist/main/index.js",
+  "author": "Over9rowth",
+  "license": "GPL-3.0-only",
+  "scripts": {
+    "build": "tsc --noEmit && node scripts/build.mjs",
+    "test": "node --test tests/*.test.cjs",
+    "smoke": "node scripts/smoke.mjs",
+    "manual": "node scripts/export-manual.mjs",
+    "package": "tsc --noEmit && node scripts/build.mjs && electron-forge package",
+    "make": "tsc --noEmit && node scripts/build.mjs && electron-forge make"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^7.7.0",
+    "@electron-forge/maker-squirrel": "^7.7.0",
+    "@electron-forge/maker-zip": "^7.7.0",
+    "@types/node": "^22.13.5",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "electron": "^34.2.0",
+    "esbuild": "^0.25.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "typescript": "^5.7.3"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "name": "ClipboardArchaeology",
+        "executableName": "ClipboardArchaeology",
+        "icon": "resources/icon",
+        "asar": true,
+        "win32metadata": {
+          "CompanyName": "Over9rowth",
+          "FileDescription": "剪贴板考古台",
+          "OriginalFilename": "ClipboardArchaeology.exe",
+          "ProductName": "剪贴板考古台",
+          "InternalName": "ClipboardArchaeology",
+          "LegalCopyright": "Copyright (C) 2026 Over9rowth (GPL-3.0)"
+        },
+        "ignore": [
+          "^/src",
+          "^/tests",
+          "^/scripts",
+          "^/resources",
+          "^/project_meta",
+          "^/\\.git",
+          "^/tsconfig\\.json",
+          "^/SPEC\\.md",
+          "^/node_modules",
+          "^/SPEC\\.md$",
+          "^/out",
+          "^/out-"
+        ],
+        "appCopyright": "Copyright (C) 2026 Over9rowth (GPL-3.0)"
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "ClipboardArchaeology",
+            "authors": "Over9rowth",
+            "exe": "ClipboardArchaeology.exe",
+            "setupExe": "ClipboardArchaeology-0.1.0-Setup.exe",
+            "setupIcon": "resources/icon.ico",
+            "noMsi": true
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "win32"
+          ]
+        }
+      ]
+    }
+  },
+  "keywords": [
+    "electron",
+    "typescript",
+    "react",
+    "desktop-app",
+    "windows-app",
+    "offline-first",
+    "gplv3",
+    "clipboard-manager",
+    "privacy-tools",
+    "data-masking",
+    "pii-detection",
+    "luhn-algorithm",
+    "regex-extractor",
+    "security-tools"
+  ]
+}

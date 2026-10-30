@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>剪贴板考古台 v0.1.0 用户使用说明书</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      margin: 40px;
+      line-height: 1.6;
+      color: #1e293b;
+    }
+    h1 {
+      color: #0f172a;
+      border-bottom: 2px solid #38bdf8;
+      padding-bottom: 12px;
+    }
+    h2 {
+      color: #1e293b;
+      margin-top: 24px;
+      border-left: 4px solid #6366f1;
+      padding-left: 10px;
+    }
+    .badge {
+      display: inline-block;
+      background: #e0f2fe;
+      color: #0369a1;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .alert {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 14px 18px;
+      margin: 16px 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+    }
+    th, td {
+      border: 1px solid #cbd5e1;
+      padding: 10px 14px;
+      text-align: left;
+    }
+    th {
+      background: #f1f5f9;
+    }
+    code {
+      background: #f1f5f9;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: Consolas, monospace;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <h1>剪贴板考古台 (Clipboard Archaeology) v0.1.0</h1>
+  <div class="badge">Over9rowth 研发部</div>
+  <div class="badge">100% 离线确定性计算</div>
+
+  <div class="alert">
+    <strong>仪器定位与诚实边界：</strong><br>
+    本工具为 100% 本机离线运行的确定性度量与辅助分析仪器，不上传任何用户数据。所有统计、敏感凭证嗅探与高亮均基于公开透明的数学公式与编码规则（Luhn 模 10 校验、ISO 7064:1983.MOD 11-2、香农信息熵），结果仅供本地安全排查与核验参考。
+  </div>
+
+  <h2>一、核心特性与 30 秒“诶”点</h2>
+  <ul>
+    <li><strong>SHA-256 智能去重归档</strong>：剪贴板重复内容秒级识别去重，保留最新时间戳与历史引用。</li>
+    <li><strong>真实银行卡 Luhn 模 10 校验</strong>：杜绝正则假误报，严格校验 13~19 位卡号奇偶加权求和，排除全同测试伪号。</li>
+    <li><strong>二代身份证 ISO 7064 校验码校验</strong>：精准校验前 17 位生日/地域码与第 18 位校验码对应关系。</li>
+    <li><strong>API Key 与 JWT 令牌嗅探</strong>：自动捕捉 OpenAI / AWS / GitHub Token 及 JWT 头部凭据。</li>
+    <li><strong>香农信息熵随机密码探针</strong>：利用数学信息熵公式 \(H = -\sum p_i \log_2 p_i\)，高敏捕获 \(H \ge 3.85\) 的极高危复杂密码。</li>
+    <li><strong>一键安全脱敏</strong>：保留前 3 字符与后 2 字符，中间自动填充 <code>••••••</code> 掩码，防拍照防窥屏。</li>
+  </ul>
+
+  <h2>二、技术指标规格</h2>
+  <table>
+    <tr><th>指标项</th><th>规格参数</th><th>说明</th></tr>
+    <tr><td>离线保障</td><td>100% 离线，无网络通信</td><td>不向任何外部服务器发送剪贴板数据</td></tr>
+    <tr><td>哈希引擎</td><td>SHA-256</td><td>单条记录内容唯一数字指纹</td></tr>
+    <tr><td>卡号校验</td><td>Luhn 模 10 算法</td><td>真实数学求和 mod 10 === 0</td></tr>
+    <tr><td>身份证校验</td><td>ISO 7064:1983.MOD 11-2</td><td>17 位加权求和 mod 11 映射表</td></tr>
+    <tr><td>熵值探针</td><td>Shannon Entropy (bits/char)</td><td>阈值 3.85 bits/char</td></tr>
+    <tr><td>脱敏规则</td><td>前 3 字符 + •••••• + 后 2 字符</td><td>结构保留但凭据无法还原</td></tr>
+  </table>
+
+  <h2>三、快捷操作与使用方法</h2>
+  <ol>
+    <li>启动软件即自动载入包含各类凭证的演示样本，直观展现 30 秒“诶”点；</li>
+    <li>点击上方“从系统剪贴板读取”按钮，实时抓取当前操作系统剪贴板内容并进行 SHA-256 归档与安全体检；</li>
+    <li>点击敏感条目右侧的“一键掩码复制”按钮，即可将脱敏后的安全版本重新拷入剪贴板；</li>
+    <li>点击右上角“导出 JSON 报告”可归档当前所有考古记录及其检测详情。</li>
+  </ol>
+</body>
+</html>
